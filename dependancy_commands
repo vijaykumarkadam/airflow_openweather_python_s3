@@ -6,6 +6,7 @@ sudo pip install pandas
 sudo pip install s3fs
 sudo apt  install awscli
 aws configure
+pip install apache-airflow-providers-http
 sudo pip install apache-airflow
 airflow standalone
 aws sts get-session-token
