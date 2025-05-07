@@ -2,7 +2,7 @@ from airflow import DAG
 from datetime import timedelta, datetime
 from airflow.providers.http.sensors.http import HttpSensor
 import json
-from airflow.providers.http.operators.http import SimpleHttpOperator
+from airflow.providers.http.operators.http import HttpOperator
 from airflow.operators.python import PythonOperator
 import pandas as pd
 
@@ -79,7 +79,7 @@ with DAG('weather_dag',
         )
 
 
-        extract_weather_data = SimpleHttpOperator(
+        extract_weather_data = HttpOperator(
         task_id = 'extract_weather_data',
         http_conn_id = 'weathermap_api',
         endpoint='/data/2.5/weather?q=Portland&APPID=5031cde3d1a8b9469fd47e998d7aef79',
