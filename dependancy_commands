@@ -1,12 +1,16 @@
+
+#run one ec2 instance in AWS and run all this commands to up an running airflow
+python3 --version
 sudo apt update
 sudo apt install python3-pip
 sudo apt install python3.10-venv
 python3 -m venv airflow_venv
-sudo pip install pandas
-sudo pip install s3fs
-sudo apt  install awscli
+source redfin_venv/bin/activate
+pip install boto3
+pip install --upgrade awscli
 aws configure
+pip install apache-airflow
+pip install apache-airflow-providers-amazon
 pip install apache-airflow-providers-http
-sudo pip install apache-airflow
+airflow version
 airflow standalone
-aws sts get-session-token
