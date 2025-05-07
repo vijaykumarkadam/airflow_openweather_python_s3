@@ -7,6 +7,7 @@ sudo apt install python3.10-venv
 python3 -m venv weather_venv
 source weather_venv/bin/activate
 pip install boto3
+pip install s3fs
 pip install --upgrade awscli
 aws configure
 pip install apache-airflow
