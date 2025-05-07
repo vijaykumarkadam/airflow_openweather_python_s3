@@ -5,7 +5,7 @@ sudo apt update
 sudo apt install python3-pip
 sudo apt install python3.10-venv
 python3 -m venv weather_venv
-source redfin_venv/bin/activate
+source weather_venv/bin/activate
 pip install boto3
 pip install --upgrade awscli
 aws configure
